@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="footer-brand-col">
             <Link to="/" style={{ display: 'inline-block' }}>
               <img
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="BrandedCoders"
                 style={{ height: '48px', width: 'auto', display: 'block', objectFit: 'contain' }}
               />

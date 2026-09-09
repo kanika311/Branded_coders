@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="container nav-inner">
         <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
           <img
-            src="/logo.png"
+            src="/logo.jpeg"
             alt="BrandedCoders"
             style={{ height: '54px', width: 'auto', display: 'block', objectFit: 'contain' }}
           />

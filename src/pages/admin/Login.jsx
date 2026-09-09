@@ -29,7 +29,7 @@ export default function AdminLogin() {
       <div className="login-box">
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <img
-            src="/logo.png"
+            src="/logo.jpeg"
             alt="BrandedCoders"
             style={{ height: '48px', width: 'auto', margin: '0 auto 12px', display: 'block', objectFit: 'contain' }}
           />
