@@ -94,8 +94,8 @@ export default function InteractiveHero3D() {
         position: 'relative',
         width: '100%',
         height: '100%',
-        minHeight: 440,
         cursor: 'grab',
+        touchAction: 'pan-y',
       }}
     >
       <Canvas

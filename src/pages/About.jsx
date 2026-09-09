@@ -33,7 +33,7 @@ export default function About() {
     <div className="bg-grid-subtle">
       {/* 3D ABOUT HERO (NO WASTED SPACE) */}
       <section style={{ padding: '44px 0 28px' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 32, alignItems: 'center' }}>
+        <div className="container responsive-two-col">
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
               <span className="eyebrow" style={{ margin: 0 }}>
@@ -131,7 +131,7 @@ export default function About() {
             <p>We built our operational model to eliminate everything clients dislike about typical creative agencies.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
+          <div className="responsive-cards-grid">
             {pillars.map((p) => (
               <TiltCard
                 key={p.num}
@@ -167,7 +167,7 @@ export default function About() {
             <p>From local software engineering to scaling venture-backed and enterprise operations.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+          <div className="responsive-cards-grid">
             {milestones.map((m) => (
               <TiltCard key={m.year} maxTilt={8} className="panel-card" style={{ padding: '22px' }}>
                 <span className="badge" style={{ background: '#EFF6FF', color: '#2563EB', fontWeight: 800, fontSize: '0.82rem', marginBottom: 10 }}>
@@ -193,7 +193,7 @@ export default function About() {
               <p>Direct words from teams whose platforms and digital growth we power daily.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 18 }}>
+            <div className="responsive-cards-grid">
               {reviews.slice(0, 3).map((r) => (
                 <TiltCard key={r.id} maxTilt={8} className="panel-card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>

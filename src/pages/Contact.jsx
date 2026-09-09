@@ -99,7 +99,7 @@ export default function Contact() {
             </TiltCard>
 
             {/* 3 COMPACT CONTACT TILES */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+            <div className="responsive-cards-grid" style={{ gap: 12 }}>
               <TiltCard maxTilt={8} className="panel-card" style={{ padding: '16px' }}>
                 <span style={{ fontSize: '0.74rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                   Direct Email
@@ -228,7 +228,7 @@ export default function Contact() {
               </div>
 
               {/* INPUT FIELDS (2 COLUMNS) */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div className="form-two-col">
                 <div className="field" style={{ marginBottom: 12 }}>
                   <label htmlFor="name" style={{ fontSize: '0.82rem', fontWeight: 600 }}>Your Name *</label>
                   <input
@@ -254,7 +254,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div className="form-two-col">
                 <div className="field" style={{ marginBottom: 12 }}>
                   <label htmlFor="email" style={{ fontSize: '0.82rem', fontWeight: 600 }}>Work Email *</label>
                   <input

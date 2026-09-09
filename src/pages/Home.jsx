@@ -39,7 +39,7 @@ export default function Home() {
       <section className="hero" style={{ padding: '48px 0 32px' }}>
         <div className="container hero-grid">
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12, flexWrap: 'wrap' }}>
               <span className="eyebrow" style={{ margin: 0 }}>
                 {content.heroEyebrow || '✨ Digital Product Studio & Growth Agency'}
               </span>
@@ -48,7 +48,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.4rem)', lineHeight: 1.12 }}>
+            <h1 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3.4rem)', lineHeight: 1.15 }}>
               {content.heroHeadline || 'We build high-converting software and scale it with Digital Marketing.'}
             </h1>
 
@@ -98,7 +98,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT: INTERACTIVE 3D WEBGL CORE */}
-          <div className="hero-canvas" style={{ height: 440 }}>
+          <div className="hero-canvas">
             <InteractiveHero3D />
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
             <p>From initial market research to live product scaling, every milestone is structured and measurable.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 18 }}>
+          <div className="responsive-cards-grid">
             {process.map((p) => (
               <TiltCard key={p.step} maxTilt={9} className="panel-card" style={{ padding: '24px' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent)', marginBottom: 8 }}>
@@ -214,7 +214,7 @@ export default function Home() {
               <p>Trusted by founders, logistics leaders, and high-growth retail brands across India and globally.</p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
+            <div className="responsive-cards-grid">
               {reviews.map((r) => (
                 <TiltCard key={r.id} maxTilt={8} className="panel-card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>

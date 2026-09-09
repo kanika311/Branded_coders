@@ -67,7 +67,7 @@ export default function Services() {
     <div className="bg-grid-subtle">
       {/* 3D SERVICE HERO WITH INTERACTIVE 3D MATRIX (NO WASTED SPACE) */}
       <section style={{ padding: '44px 0 28px' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: 32, alignItems: 'center' }}>
+        <div className="container responsive-two-col">
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
               <span className="eyebrow" style={{ margin: 0 }}>Studio Capabilities</span>
@@ -172,7 +172,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
+          <div className="responsive-cards-grid">
             {marketingPillars.map((p) => (
               <TiltCard
                 key={p.title}
@@ -215,7 +215,7 @@ export default function Services() {
           </div>
 
           <TiltCard maxTilt={5} className="chart-card" style={{ padding: '32px', background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 36, alignItems: 'center' }}>
+            <div className="responsive-two-col">
               {/* SLIDERS COLUMN */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                 <div>
@@ -350,7 +350,7 @@ export default function Services() {
           {loading ? (
             <p>Loading services…</p>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 18 }}>
+            <div className="responsive-cards-grid">
               {services.map((s, i) => (
                 <TiltCard
                   key={s._id || i}

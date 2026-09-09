@@ -72,7 +72,7 @@ export default function Portfolio() {
           {loading && <p>Loading projects…</p>}
           {!loading && filteredItems.length === 0 && <p>No projects in this category yet.</p>}
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 20 }}>
+          <div className="responsive-cards-grid">
             {filteredItems.map((p) => (
               <TiltCard key={p._id || p.title} maxTilt={8} className="portfolio-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
