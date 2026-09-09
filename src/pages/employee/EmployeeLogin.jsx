@@ -29,9 +29,9 @@ export default function EmployeeLogin() {
       <div className="login-box">
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <img
-            src="/logo.jpeg"
+            src="/logo-mark.png"
             alt="BrandedCoders"
-            style={{ height: '48px', width: 'auto', margin: '0 auto 12px', display: 'block', objectFit: 'contain' }}
+            style={{ height: '72px', width: 'auto', margin: '0 auto 12px', display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(255,122,0,0.25))' }}
           />
           <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--ink)' }}>Employee Portal Login</h2>
           <p style={{ fontSize: '0.86rem', color: 'var(--ink-dim)', marginTop: 4 }}>

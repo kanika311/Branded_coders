@@ -16,12 +16,20 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand-col">
-            <Link to="/" style={{ display: 'inline-block' }}>
-              <img
-                src="/logo.jpeg"
-                alt="BrandedCoders"
-                style={{ height: '48px', width: 'auto', display: 'block', objectFit: 'contain' }}
-              />
+            <Link to="/" className="brand-logo" style={{ display: 'inline-flex', padding: 0, marginBottom: 8 }}>
+              <div className="brand-logo-img-wrap">
+                <img
+                  src="/logo-mark.png"
+                  alt="BrandedCoders"
+                  style={{ height: '48px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="brand-logo-text" style={{ marginLeft: 10 }}>
+                <span className="brand-name" style={{ fontSize: '1.28rem' }}>
+                  Branded<span className="brand-name-accent">Coders</span>
+                </span>
+                <span className="brand-tagline">DIGITAL GROWTH STUDIO</span>
+              </div>
             </Link>
             <p style={{ marginTop: 10, maxWidth: 290, fontSize: '0.84rem', lineHeight: 1.5 }}>
               {footer.bio || 'Full-stack digital studio designing, engineering high-speed web apps, MERN platforms, and scaling them with data-driven Digital Marketing.'}

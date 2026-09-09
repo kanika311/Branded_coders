@@ -29,9 +29,9 @@ export default function AdminLogin() {
       <div className="login-box">
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <img
-            src="/logo.jpeg"
+            src="/logo-mark.png"
             alt="BrandedCoders"
-            style={{ height: '48px', width: 'auto', margin: '0 auto 12px', display: 'block', objectFit: 'contain' }}
+            style={{ height: '72px', width: 'auto', margin: '0 auto 12px', display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(37,99,235,0.25))' }}
           />
           <h2 style={{ fontSize: '1.45rem', fontWeight: 800 }}>Management Sign In</h2>
           <p style={{ fontSize: '0.86rem', color: 'var(--ink-dim)', marginTop: 4 }}>
