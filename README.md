@@ -9,10 +9,11 @@ and contact-form messages. One repo, one Vercel project.
 
 ```
 brandedcoders/
-  api/            serverless backend (Express-style handlers, Mongoose models)
+  api/            single Vercel serverless entrypoint (api/index.js)
+  server/         consolidated Express backend (routes, models, auth middleware, db)
   src/            React front end (public site + admin CMS)
   scripts/seed.js one-time script to create the admin user + starter content
-  vercel.json     routes /api/* to serverless functions, everything else to the SPA
+  vercel.json     routes /api/* to api/index.js, everything else to the SPA
 ```
 
 ## 1. Install
@@ -86,7 +87,7 @@ This serves both the site and `/api/*` on the same local port. Visit
   if you want a different mark.
 - Contact form submissions are stored in MongoDB (`Message` model) and are
   visible under `/admin/messages`. Wire up an email provider (e.g. Resend or
-  Nodemailer via an SMTP relay) inside `api/messages.js` if you also want
+  Nodemailer via an SMTP relay) inside `server/routes/messages.js` if you also want
   email notifications.
 - All admin write routes (`POST`/`PUT`/`DELETE` on services, portfolio, and
-  reading messages) require a valid JWT — check `api/middleware/auth.js`.
+  reading messages) require a valid JWT — check `server/middleware/auth.js`.

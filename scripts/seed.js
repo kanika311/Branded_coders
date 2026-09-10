@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-import Admin from '../api/models/Admin.js';
-import Service from '../api/models/Service.js';
-import Portfolio from '../api/models/Portfolio.js';
+import Admin from '../server/models/Admin.js';
+import Service from '../server/models/Service.js';
+import Portfolio from '../server/models/Portfolio.js';
 
 const services = [
   { title: 'Website Design & Development', slug: 'websites', order: 1, icon: 'globe',

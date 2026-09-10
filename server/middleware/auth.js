@@ -1,17 +1,16 @@
 import jwt from 'jsonwebtoken';
 
-export function requireAuth(req, res) {
+export function requireAuth(req, res, next) {
   const header = req.headers.authorization || '';
   const token = header.startsWith('Bearer ') ? header.slice(7) : null;
   if (!token) {
-    res.status(401).json({ error: 'Missing or invalid authorization token' });
-    return null;
+    return res.status(401).json({ error: 'Missing or invalid authorization token' });
   }
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    return payload;
+    req.user = payload;
+    next();
   } catch (err) {
-    res.status(401).json({ error: 'Session expired, please log in again' });
-    return null;
+    return res.status(401).json({ error: 'Session expired, please log in again' });
   }
 }
