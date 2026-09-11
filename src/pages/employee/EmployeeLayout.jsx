@@ -1,34 +1,82 @@
-import { NavLink, Outlet, useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, Outlet, useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
 
 export default function EmployeeLayout() {
   const { employee, logoutEmployee } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   function onLogout() {
     logoutEmployee();
     navigate('/employee/login');
   }
 
+  const closeSidebar = () => setMobileOpen(false);
+
   return (
     <div className="emp-shell">
-    
-      <aside className="emp-sidebar">
+      {/* MOBILE TOPBAR FOR SCREENS <= 900PX */}
+      <div className="emp-mobile-topbar">
+        <div className="emp-mobile-topbar-brand">
+          <img
+            src="/logo-dark.png"
+            alt="BrandedCoders Employee"
+            style={{ height: '32px', width: 'auto', display: 'block', objectFit: 'contain' }}
+          />
+          <span>Employee Portal</span>
+        </div>
+        <button
+          type="button"
+          className="emp-mobile-hamburger"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle employee navigation"
+        >
+          {mobileOpen ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* MOBILE BACKDROP */}
+      {mobileOpen && (
+        <div
+          className="emp-sidebar-backdrop"
+          onClick={closeSidebar}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* SIDEBAR NAVIGATION */}
+      <aside className={`emp-sidebar ${mobileOpen ? 'mobile-open' : ''}`}>
         <div>
-          <div className="emp-brand" style={{ padding: '4px 0' }}>
-            <Link to="/employee/dashboard" style={{ display: 'block' }}>
+          <div className="emp-brand" style={{ padding: '4px 0', justifyContent: 'space-between' }}>
+            <Link to="/employee/dashboard" onClick={closeSidebar} style={{ display: 'block' }}>
               <img
                 src="/logo-dark.png"
                 alt="BrandedCoders Employee"
-                style={{ height: '60px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                style={{ height: '48px', width: 'auto', display: 'block', objectFit: 'contain' }}
               />
             </Link>
+            {mobileOpen && (
+              <button
+                type="button"
+                onClick={closeSidebar}
+                style={{ background: 'transparent', color: '#94A3B8', fontSize: '1.2rem', padding: '4px 8px' }}
+              >
+                ✕
+              </button>
+            )}
           </div>
 
           <nav className="emp-nav-menu">
             <NavLink
               to="/employee/dashboard"
               end
+              onClick={closeSidebar}
               className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}
             >
               <span style={{ fontSize: '1.1rem' }}>📊</span> Dashboard
@@ -36,6 +84,7 @@ export default function EmployeeLayout() {
 
             <NavLink
               to="/employee/leads"
+              onClick={closeSidebar}
               className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}
             >
               <span style={{ fontSize: '1.1rem' }}>👥</span> Contact Leads
@@ -43,6 +92,7 @@ export default function EmployeeLayout() {
 
             <NavLink
               to="/employee/tasks"
+              onClick={closeSidebar}
               className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}
             >
               <span style={{ fontSize: '1.1rem' }}>📝</span> My Tasks
@@ -50,6 +100,7 @@ export default function EmployeeLayout() {
 
             <Link
               to="/employee/leads?add=true"
+              onClick={closeSidebar}
               className="emp-nav-item"
               style={{ color: '#FFB13D', background: 'rgba(255, 177, 61, 0.08)' }}
             >
@@ -58,6 +109,7 @@ export default function EmployeeLayout() {
 
             <NavLink
               to="/employee/settings"
+              onClick={closeSidebar}
               className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}
             >
               <span style={{ fontSize: '1.1rem' }}>⚙️</span> Settings & Profile
@@ -66,7 +118,7 @@ export default function EmployeeLayout() {
         </div>
 
         <div className="emp-sidebar-bottom">
-          {/* LANGUAGE SELECTOR AS IN SCREENSHOT */}
+          {/* LANGUAGE SELECTOR */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 12px', color: '#94A3B8', fontSize: '0.82rem' }}>
             <span>🌐</span>
             <span>Language: <strong>EN (English)</strong></span>

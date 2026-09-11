@@ -48,7 +48,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3.4rem)', lineHeight: 1.15 }}>
+            <h1 style={{ fontSize: 'clamp(1.75rem, 4.2vw, 3.4rem)', lineHeight: 1.15 }}>
               {content.heroHeadline || 'We build high-converting software and scale it with Digital Marketing.'}
             </h1>
 
@@ -109,7 +109,7 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              <div style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--orange-light)', color: 'var(--orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', fontWeight: 800 }}>
+              <div style={{ width: 42, height: 42, flexShrink: 0, borderRadius: 10, background: 'var(--orange-light)', color: 'var(--orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', fontWeight: 800 }}>
                 📈
               </div>
               <div>
@@ -295,7 +295,7 @@ export default function Home() {
       {/* BOTTOM ACTION BANNER (TIGHT & PURPOSEFUL) */}
       <section style={{ padding: '48px 0', background: 'radial-gradient(circle at center, #EFF6FF 0%, #F8FAFC 100%)', borderTop: '1px solid var(--panel-line)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: 680 }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3.8vw, 2.2rem)', fontWeight: 800 }}>
             {content.ctaHeadline || 'Ready to launch or accelerate your digital product?'}
           </h2>
           <p style={{ marginTop: 10, fontSize: '1rem', color: '#475569' }}>

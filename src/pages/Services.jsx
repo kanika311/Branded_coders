@@ -132,7 +132,7 @@ export default function Services() {
           </div>
 
           {/* RIGHT: INTERACTIVE 3D SERVICES MATRIX */}
-          <TiltCard maxTilt={6} className="hero-canvas" style={{ height: 380, display: 'flex', flexDirection: 'column' }}>
+          <TiltCard maxTilt={6} className="hero-canvas" style={{ display: 'flex', flexDirection: 'column' }}>
             <InteractiveServices3D activeServiceSlug={selectedSlug} />
             <div
               style={{
@@ -214,7 +214,7 @@ export default function Services() {
             </p>
           </div>
 
-          <TiltCard maxTilt={5} className="chart-card" style={{ padding: '32px', background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+          <TiltCard maxTilt={5} className="chart-card" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
             <div className="responsive-two-col">
               {/* SLIDERS COLUMN */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -305,7 +305,7 @@ export default function Services() {
                   <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#94A3B8', fontWeight: 700 }}>
                     Projected Revenue Potential
                   </div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', fontWeight: 800, color: '#38BDF8', margin: '10px 0 4px' }}>
+                  <div className="calc-projected-value">
                     ₹{(projectedRevenue * 85).toLocaleString('en-IN')}
                   </div>
                   <div style={{ fontSize: '0.85rem', color: '#CBD5E1' }}>

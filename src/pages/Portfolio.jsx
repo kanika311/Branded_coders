@@ -32,7 +32,7 @@ export default function Portfolio() {
             </span>
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2.2rem, 4.2vw, 3.2rem)', lineHeight: 1.15, maxWidth: 740 }}>
+          <h1 style={{ fontSize: 'clamp(1.75rem, 4.2vw, 3.2rem)', lineHeight: 1.15, maxWidth: 740 }}>
             Proven results shipped for <span className="hero-gradient-text">ambitious businesses</span>.
           </h1>
 
@@ -100,7 +100,7 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <div style={{ padding: '16px 24px', borderTop: '1px solid var(--panel-line)', background: '#FAFAFA', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ padding: '14px 20px', borderTop: '1px solid var(--panel-line)', background: '#FAFAFA', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
                   <span style={{ fontSize: '0.78rem', color: '#059669', fontWeight: 600 }}>● Shipped & Live</span>
                   <Link to="/contact" style={{ fontSize: '0.82rem', color: 'var(--accent)', fontWeight: 700 }}>
                     Build Something Similar →

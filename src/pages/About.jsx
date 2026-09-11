@@ -91,7 +91,7 @@ export default function About() {
           </div>
 
           {/* RIGHT: INTERACTIVE 3D STUDIO ATOM */}
-          <TiltCard maxTilt={6} className="hero-canvas" style={{ height: 380, display: 'flex', flexDirection: 'column' }}>
+          <TiltCard maxTilt={6} className="hero-canvas" style={{ display: 'flex', flexDirection: 'column' }}>
             <InteractiveAbout3D />
             <div
               style={{

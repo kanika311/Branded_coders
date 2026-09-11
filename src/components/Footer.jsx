@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>{footer.copyright || '© 2026 BrandedCoders Studio. All rights reserved.'}</span>
-          <div style={{ display: 'flex', gap: 20 }}>
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <Link to="/privacy" style={{ color: 'var(--ink-dim)' }}>Privacy Policy</Link>
             <Link to="/terms" style={{ color: 'var(--ink-dim)' }}>Terms of Service</Link>
             <Link to="/employee/login" style={{ color: 'var(--ink-dim)', fontWeight: 600 }}>Employee Login</Link>

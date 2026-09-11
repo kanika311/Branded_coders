@@ -94,7 +94,7 @@ export default function Contact() {
             </div>
 
             {/* 3D TRANSMISSION BEACON CARD */}
-            <TiltCard maxTilt={6} className="hero-canvas" style={{ height: 260, borderRadius: 'var(--radius-md)' }}>
+            <TiltCard maxTilt={6} className="hero-canvas" style={{ borderRadius: 'var(--radius-md)' }}>
               <InteractiveContact3D />
             </TiltCard>
 
@@ -139,7 +139,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT COLUMN: INTERACTIVE SCOPING & INQUIRY FORM (TILT CARD WITH NO WASTED SPACE) */}
-          <TiltCard maxTilt={5} className="chart-card" style={{ padding: '30px', background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+          <TiltCard maxTilt={5} className="chart-card" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
             <div style={{ marginBottom: 20 }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A' }}>
