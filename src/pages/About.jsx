@@ -35,12 +35,13 @@ export default function About() {
       <section style={{ padding: '44px 0 28px' }}>
         <div className="container responsive-two-col">
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 14, flexWrap: 'wrap' }}>
               <span className="eyebrow" style={{ margin: 0 }}>
                 {content.eyebrow || 'About the Studio'}
               </span>
-              <span style={{ fontSize: '0.74rem', background: '#EFF6FF', color: '#1D4ED8', padding: '3px 8px', borderRadius: 999, fontWeight: 700 }}>
-                ● Ludhiana, Punjab, India
+              <span className="status-pill-chatseo" style={{ background: 'rgba(239, 246, 255, 0.9)', borderColor: 'rgba(37, 99, 235, 0.25)', color: '#1D4ED8' }}>
+                <span className="radar-beacon" style={{ background: '#2563EB' }} />
+                <span>Ludhiana, Punjab, India</span>
               </span>
             </div>
 

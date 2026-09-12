@@ -25,10 +25,11 @@ export default function Portfolio() {
     <div className="bg-grid-subtle">
       <section style={{ padding: '44px 0 24px' }}>
         <div className="container">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 14, flexWrap: 'wrap' }}>
             <span className="eyebrow" style={{ margin: 0 }}>Case Studies & Work</span>
-            <span style={{ fontSize: '0.74rem', background: '#ECFDF5', color: '#059669', padding: '3px 8px', borderRadius: 999, fontWeight: 700 }}>
-              ● Verified Production Results
+            <span className="status-pill-chatseo">
+              <span className="radar-beacon" />
+              <span>Verified Production Results</span>
             </span>
           </div>
 

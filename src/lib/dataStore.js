@@ -361,7 +361,7 @@ const initialSiteContent = {
     marketingBannerTitle: 'Now Offering End-to-End Digital Marketing Services',
     marketingBannerDesc: 'Google & Meta Ads management, Technical SEO audits, Social Media Growth, and Conversion Rate Optimization.',
     ctaHeadline: 'Ready to launch or accelerate your digital product?',
-    ctaDesc: "Share your requirements with our team. We'll reply within one business day with a structured scoping estimate and strategy.",
+    ctaDesc:"",
   },
   about: {
     eyebrow: 'About the Studio',

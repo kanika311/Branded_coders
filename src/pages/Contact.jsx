@@ -75,12 +75,13 @@ export default function Contact() {
           {/* LEFT COLUMN: 3D BEACON + DIRECT CONTACT CHANNELS (TIGHT & PURPOSEFUL) */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 14, flexWrap: 'wrap' }}>
                 <span className="eyebrow" style={{ margin: 0 }}>
                   {content.eyebrow || 'Start a Conversation'}
                 </span>
-                <span style={{ fontSize: '0.74rem', background: '#ECFDF5', color: '#059669', padding: '3px 8px', borderRadius: 999, fontWeight: 700 }}>
-                  ● Response under 4 hours
+                <span className="status-pill-chatseo">
+                  <span className="radar-beacon" />
+                  <span>Response under 4 hours</span>
                 </span>
               </div>
 

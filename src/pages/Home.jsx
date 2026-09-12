@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import InteractiveHero3D from '../components/3d/InteractiveHero3D.jsx';
 import TiltCard from '../components/3d/TiltCard.jsx';
+import HeroWordCycler from '../components/HeroWordCycler.jsx';
 import api from '../lib/api.js';
 import { dataStore } from '../lib/dataStore.js';
 
@@ -36,23 +37,29 @@ export default function Home() {
   return (
     <div className="bg-grid-subtle">
       {/* HERO SECTION WITH INTERACTIVE 3D & COMPACT STATS */}
-      <section className="hero" style={{ padding: '48px 0 32px' }}>
-        <div className="container hero-grid">
+      <section className="hero" style={{ padding: '52px 0 36px', position: 'relative' }}>
+        {/* ChatSEO-style ambient light glow */}
+        <div className="hero-ambient-glow" aria-hidden="true" />
+
+        <div className="container hero-grid" style={{ position: 'relative', zIndex: 1 }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, flexWrap: 'wrap' }}>
               <span className="eyebrow" style={{ margin: 0 }}>
                 {content.heroEyebrow || '✨ Digital Product Studio & Growth Agency'}
               </span>
-              <span style={{ fontSize: '0.74rem', background: '#ECFDF5', color: '#059669', padding: '3px 8px', borderRadius: 999, fontWeight: 700 }}>
-                ● Accepting Q3/Q4 Projects
+              <span className="status-pill-chatseo">
+                <span className="radar-beacon" />
+                <span>Accepting Q3/Q4 Projects</span>
               </span>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(1.75rem, 4.2vw, 3.4rem)', lineHeight: 1.15 }}>
-              {content.heroHeadline || 'We build high-converting software and scale it with Digital Marketing.'}
+            <h1 className="hero-main-title">
+              We engineer high-converting software that makes your brand{' '}
+              <span className="hero-highlight-word">scale</span> across{' '}
+              <HeroWordCycler />
             </h1>
 
-            <p className="lede" style={{ marginTop: 16, fontSize: '1.05rem', maxWidth: 540 }}>
+            <p className="hero-lede-clear">
               {content.heroDescription || 'BrandedCoders designs and engineers fast websites, bespoke CMS platforms, operational dashboards, and mobile apps — paired with data-driven SEO and paid acquisition to drive measurable revenue.'}
             </p>
 
@@ -138,9 +145,6 @@ export default function Home() {
               <span className="eyebrow">Studio Capabilities</span>
               <h2>Engineering & Growth under one roof.</h2>
             </div>
-            <p>
-              No finger-pointing between developers and marketing teams. We build digital products designed from day one to attract, convert, and retain clients.
-            </p>
           </div>
 
           <div className="service-grid">
@@ -185,7 +189,7 @@ export default function Home() {
               <span className="eyebrow">Structured Execution</span>
               <h2>How We Deliver High-Growth Digital Products</h2>
             </div>
-            <p>From initial market research to live product scaling, every milestone is structured and measurable.</p>
+
           </div>
 
           <div className="responsive-cards-grid">
@@ -211,7 +215,7 @@ export default function Home() {
                 <span className="eyebrow">Proof of Quality</span>
                 <h2>Client Endorsements & Measurable ROI</h2>
               </div>
-              <p>Trusted by founders, logistics leaders, and high-growth retail brands across India and globally.</p>
+            
             </div>
 
             <div className="responsive-cards-grid">
@@ -251,9 +255,7 @@ export default function Home() {
             <div style={{ textAlign: 'center', marginBottom: 36 }}>
               <span className="eyebrow">Clear Answers</span>
               <h2 style={{ marginTop: 8 }}>Frequently Asked Questions</h2>
-              <p style={{ marginTop: 8, fontSize: '0.95rem' }}>
-                Everything you need to know about engaging with BrandedCoders.
-              </p>
+       
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -299,7 +301,7 @@ export default function Home() {
             {content.ctaHeadline || 'Ready to launch or accelerate your digital product?'}
           </h2>
           <p style={{ marginTop: 10, fontSize: '1rem', color: '#475569' }}>
-            {content.ctaDesc || "Share your requirements with our team. We'll reply within one business day with a structured scoping estimate and strategy."}
+            {content.ctaDesc || ""}
           </p>
           <div style={{ marginTop: 24, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '0.98rem' }}>
