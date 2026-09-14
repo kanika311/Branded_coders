@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import InteractiveServices3D from '../components/3d/InteractiveServices3D.jsx';
 import TiltCard from '../components/3d/TiltCard.jsx';
 import api from '../lib/api.js';
 
@@ -131,29 +130,61 @@ export default function Services() {
             </div>
           </div>
 
-          {/* RIGHT: INTERACTIVE 3D SERVICES MATRIX */}
-          <TiltCard maxTilt={6} className="hero-canvas" style={{ display: 'flex', flexDirection: 'column' }}>
-            <InteractiveServices3D activeServiceSlug={selectedSlug} />
-            <div
-              style={{
-                position: 'absolute',
-                top: 14,
-                left: 14,
-                right: 14,
-                background: 'rgba(255, 255, 255, 0.9)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid #E2E8F0',
-                borderRadius: 10,
-                padding: '10px 14px',
-                zIndex: 10,
-              }}
-            >
-              <div style={{ fontWeight: 800, fontSize: '0.94rem', color: '#0F172A' }}>{activeService.title}</div>
-              <p style={{ fontSize: '0.78rem', color: '#64748B', marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                {activeService.summary || activeService.description}
+          {/* RIGHT: INTERACTIVE SERVICE ARCHITECTURE & METRICS SHOWCASE */}
+          <div
+            style={{
+              background: '#FFFFFF',
+              borderRadius: '20px',
+              border: '1px solid #E2E8F0',
+              padding: '28px',
+              boxShadow: '0 16px 36px -8px rgba(15, 23, 42, 0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+                <span style={{ fontSize: '0.74rem', background: '#EFF6FF', color: '#1D4ED8', padding: '4px 10px', borderRadius: 999, fontWeight: 700 }}>
+                  Active Discipline Inspection
+                </span>
+                <span style={{ fontSize: '0.76rem', color: '#059669', fontWeight: 700 }}>● Ready to Deploy</span>
+              </div>
+
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#0F172A', marginBottom: 8 }}>
+                {activeService.title}
+              </h3>
+
+              <p style={{ fontSize: '0.92rem', color: '#64748B', lineHeight: 1.6, marginBottom: 20 }}>
+                {activeService.description || activeService.summary}
               </p>
+
+              <div style={{ background: '#F8FAFC', borderRadius: 12, border: '1px solid #E2E8F0', padding: '16px', marginBottom: 20 }}>
+                <span style={{ fontSize: '0.74rem', fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Core Deliverables:
+                </span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 8 }}>
+                  {(activeService.highlights || ['High-Speed Architecture', '95+ Google PageSpeed', 'Mobile-First Design']).map((h) => (
+                    <div key={h} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.86rem', color: '#334155' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>{h}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </TiltCard>
+
+            <div style={{ paddingTop: 16, borderTop: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div style={{ fontSize: '0.82rem', color: '#64748B' }}>
+                Estimated Timeline: <strong style={{ color: '#0F172A' }}>2–4 Weeks</strong>
+              </div>
+              <Link to="/contact" style={{ fontSize: '0.86rem', color: 'var(--accent)', fontWeight: 700 }}>
+                Scope This Service &rarr;
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

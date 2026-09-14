@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import InteractiveContact3D from '../components/3d/InteractiveContact3D.jsx';
 import TiltCard from '../components/3d/TiltCard.jsx';
 import api from '../lib/api.js';
 import { dataStore } from '../lib/dataStore.js';
@@ -94,10 +93,50 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* 3D TRANSMISSION BEACON CARD */}
-            <TiltCard maxTilt={6} className="hero-canvas" style={{ borderRadius: 'var(--radius-md)' }}>
-              <InteractiveContact3D />
-            </TiltCard>
+            {/* CLEAN STUDIO DISPATCH & AVAILABILITY STATUS (TECHPYRO POLISH) */}
+            <div
+              style={{
+                background: '#FFFFFF',
+                borderRadius: '16px',
+                border: '1px solid #E2E8F0',
+                padding: '24px',
+                boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: 16,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                <div
+                  style={{
+                    width: 46,
+                    height: 46,
+                    borderRadius: '12px',
+                    background: '#EFF6FF',
+                    color: '#2563EB',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.4rem',
+                  }}
+                >
+                  ⚡
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#0F172A' }}>
+                    Guaranteed Same-Day Response
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#64748B' }}>
+                    Technical scoping proposals delivered within 4 business hours.
+                  </div>
+                </div>
+              </div>
+              <span style={{ fontSize: '0.76rem', background: '#ECFDF5', color: '#059669', padding: '4px 12px', borderRadius: 999, fontWeight: 700 }}>
+                ● Lead Architects On-Call
+              </span>
+            </div>
 
             {/* 3 COMPACT CONTACT TILES */}
             <div className="responsive-cards-grid" style={{ gap: 12 }}>

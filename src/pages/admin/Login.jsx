@@ -78,6 +78,29 @@ export default function AdminLogin() {
           >
             {loading ? 'Authenticating…' : 'Sign in to Console →'}
           </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setEmail('admin@brandedcoders.com');
+              setPassword('admin123');
+              loginAdmin('admin@brandedcoders.com', 'admin123').then(() => navigate('/admin'));
+            }}
+            style={{
+              width: '100%',
+              padding: '10px',
+              fontSize: '0.84rem',
+              fontWeight: 700,
+              marginTop: 10,
+              background: '#EFF6FF',
+              color: '#1D4ED8',
+              border: '1px solid #BFDBFE',
+              borderRadius: '8px',
+              cursor: 'pointer',
+            }}
+          >
+            ⚡ 1-Click Demo Admin Login (CRUD Console)
+          </button>
         </form>
 
         <div style={{ marginTop: 24, paddingTop: 18, borderTop: '1px solid var(--panel-line)', textAlign: 'center' }}>

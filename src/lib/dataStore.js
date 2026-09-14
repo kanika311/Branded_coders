@@ -1,6 +1,6 @@
 // Central reactive store for BrandedCoders with LocalStorage persistence
 
-const STORAGE_KEY = 'bc_central_store_v2';
+const STORAGE_KEY = 'bc_central_store_v3';
 
 const initialServices = [
   {
@@ -75,49 +75,54 @@ const initialServices = [
 const initialPortfolio = [
   {
     _id: 'p-1',
-    title: 'Apex Scale Marketing Engine',
-    client: 'Apex Global Brands',
-    category: 'Digital Marketing',
+    title: 'YogSathi — Complete Yoga & Wellness Ecosystem',
+    client: 'YogSathi',
+    category: 'Web App & CMS',
     order: 1,
-    summary: 'Generated +320% qualified inbound pipeline through comprehensive SEO restructuring and multi-channel paid acquisition.',
+    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=700&auto=format&fit=crop&q=80',
+    summary: 'Full-stack wellness platform built with Next.js, Node.js, and MongoDB featuring role-based dashboards, trainer management, appointments, memberships, and CMS.',
     metrics: '+320% Qualified Leads · 4.4x ROAS',
-    tags: ['Google Ads', 'Meta Ads', 'SEO Audit', 'Analytics'],
+    tags: ['Next.js', 'Node.js', 'MongoDB', 'MERN Stack', 'CMS'],
     published: true,
   },
   {
     _id: 'p-2',
-    title: 'Northline Freight Operations Hub',
-    client: 'Northline Logistics Ltd.',
-    category: 'Dashboard',
+    title: 'Physiopilates — Healthcare & Therapy Platform',
+    client: 'Physiopilates Clinic',
+    category: 'Web App & CMS',
     order: 2,
-    summary: 'Live shipment tracking dashboard replacing manual spreadsheets and reducing turnaround times by 40%.',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&auto=format&fit=crop&q=80',
+    summary: 'Modern physiotherapy and wellness platform featuring appointment booking, doctor profiles, therapy modules, testimonials gallery, and responsive experience.',
     metrics: '40% Faster Turnaround · 12,000 Shipments/Day',
-    tags: ['React', 'Node.js', 'MongoDB', 'WebSockets'],
+    tags: ['React', 'Express.js', 'MongoDB', 'Healthcare'],
     published: true,
   },
   {
     _id: 'p-3',
-    title: 'Verdant Market Organic Storefront',
-    client: 'Verdant Retailers',
+    title: '1xdrayxh Healthcare & Diagnostic Systems',
+    client: 'Dr. Ayxh Diagnostics',
     category: 'Web App & CMS',
     order: 3,
-    summary: 'Direct-to-consumer e-commerce platform with custom vendor CMS, smart route-optimized dispatch, and Stripe billing.',
+    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&auto=format&fit=crop&q=80',
+    summary: 'Responsive healthcare and diagnostic platform delivering modern service pages, structured content, online appointment bookings, and optimized patient UX.',
     metrics: '₹4.2M Monthly GMV · 99.98% Uptime',
-    tags: ['MERN Stack', 'Headless CMS', 'Stripe', 'Redis'],
+    tags: ['Next.js', 'TypeScript', 'Tailwind', 'Stripe'],
     published: true,
   },
   {
     _id: 'p-4',
-    title: 'Pulse Clinic Companion App',
-    client: 'Pulse Health Care',
-    category: 'Mobile App',
+    title: 'Apex Scale B2B Inbound Engine',
+    client: 'Apex Global Brands',
+    category: 'Digital Marketing',
     order: 4,
-    summary: 'Cross-platform mobile application enabling over 45,000 patients to book appointments, consult specialists, and access lab tests.',
-    metrics: '45,000+ Active Users · 4.9 App Rating',
-    tags: ['React Native', 'Node API', 'Push Notifications'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&auto=format&fit=crop&q=80',
+    summary: 'Generated +320% qualified inbound pipeline through comprehensive SEO restructuring, Google Search PPC, and full-funnel conversion tracking.',
+    metrics: '+320% Qualified Leads · 4.4x ROAS',
+    tags: ['Google Ads', 'Meta Ads', 'SEO Audit', 'Analytics'],
     published: true,
   },
 ];
+
 
 const initialEmployees = [
   {
@@ -164,6 +169,92 @@ const initialEmployees = [
     isOnline: false,
     onBreak: false,
     timerSeconds: 0,
+  },
+];
+
+const initialTeamMembers = [
+  {
+    id: 'tm-1',
+    name: 'Sushant Aggarwal',
+    role: 'Founder & Principal Engineer',
+    location: 'Ludhiana, Punjab',
+    bio: 'Full-stack software architect with 8+ years building enterprise web apps, high-throughput backend APIs, and scalable JavaScript architectures. Passionate about sub-second load times and zero-bloat code.',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+    expertise: ['Full-Stack JavaScript', 'Next.js & React', 'System Architecture'],
+    order: 1,
+  },
+  {
+    id: 'tm-2',
+    name: 'Kanika Sharma',
+    role: 'Co-Founder & Head of Growth',
+    location: 'Ludhiana, Punjab',
+    bio: 'Performance marketing strategist specializing in B2B SEO dominance, high-ROAS paid acquisition, and behavioral conversion optimization. Has managed over ₹1.5Cr in profitable ad spend.',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80',
+    expertise: ['Performance Marketing', 'SEO Strategy', 'Funnel CRO'],
+    order: 2,
+  },
+];
+
+const initialPlans = [
+  {
+    id: 'plan-essential',
+    name: 'Essential Care',
+    tagline: 'Peace of mind for active marketing websites',
+    price: '₹14,999',
+    period: '/ month',
+    sla: '24h SLA',
+    badge: '',
+    featured: false,
+    order: 1,
+    features: [
+      '99.9% Uptime & Health Monitoring',
+      'Weekly Security & Dependency Patches',
+      'Automated Daily Cloud Backups',
+      'Core Web Vitals & Speed Monitoring',
+      'Up to 4 Hours dedicated monthly dev edits',
+      'Email & WhatsApp ticket support (24h SLA)',
+    ],
+    cta: 'Choose Essential Care',
+  },
+  {
+    id: 'plan-growth',
+    name: 'Growth & Scale AMC',
+    tagline: 'For revenue-generating platforms & apps',
+    price: '₹29,999',
+    period: '/ month',
+    sla: '< 4h SLA',
+    badge: 'Most Popular',
+    featured: true,
+    order: 2,
+    features: [
+      'Everything in Essential Care',
+      'Priority Critical Bug Fixes (< 4h SLA)',
+      'Continuous Monthly SEO & Speed Tuning',
+      'Up to 12 Hours dedicated feature updates',
+      'Conversion & Funnel Analytics Reporting',
+      'Dedicated Senior Engineer & WhatsApp group',
+    ],
+    cta: 'Choose Growth AMC',
+  },
+  {
+    id: 'plan-enterprise',
+    name: 'Enterprise Retainer',
+    tagline: 'Dedicated engineering & growth partner',
+    price: 'Custom',
+    period: 'tailored SLA',
+    sla: '1-hour SLA',
+    badge: 'Enterprise',
+    featured: false,
+    order: 3,
+    features: [
+      'Full bespoke SLA with 1-hour critical response',
+      'Dedicated sprint bandwidth (30+ hours/month)',
+      'Custom CI/CD DevOps & Server Management',
+      'Weekly growth strategy & optimization calls',
+      'Quarterly architecture & security audits',
+      'Direct phone/Slack line to leadership',
+    ],
+    cta: 'Contact for Retainer',
   },
 ];
 
@@ -361,7 +452,13 @@ const initialSiteContent = {
     marketingBannerTitle: 'Now Offering End-to-End Digital Marketing Services',
     marketingBannerDesc: 'Google & Meta Ads management, Technical SEO audits, Social Media Growth, and Conversion Rate Optimization.',
     ctaHeadline: 'Ready to launch or accelerate your digital product?',
-    ctaDesc:"",
+    ctaDesc: "",
+    teamEyebrow: 'Leadership & Accountability',
+    teamHeading: 'Direct Access to the Engineers Building Your Product',
+    teamSubheading: 'No non-technical middle managers. You work directly with senior founders and hands-on architects.',
+    plansEyebrow: '',
+    plansHeading: 'Website & App Maintenance Plans (AMC)',
+    plansSubheading: '',
   },
   about: {
     eyebrow: 'About the Studio',
@@ -370,7 +467,7 @@ const initialSiteContent = {
     storyTitle: 'How We Work Differently',
     pillars: [
       { num: '01', title: 'Engineers & Marketers in Constant Sync', body: 'Too often, developers build a product in a vacuum, and marketers struggle to convert its features. At BrandedCoders, our engineering stack and marketing funnels are designed together from day one.' },
-      { num: '02', title: 'Content & Ops Independence for Clients', body: 'We don\u2019t believe in client lock-in. Every build ships with an intuitive custom CMS and clear documentation so your non-technical team can update copy, launch promotions, and view data effortlessly.' },
+      { num: '02', title: 'Content & Ops Independence for Clients', body: 'We don’t believe in client lock-in. Every build ships with an intuitive custom CMS and clear documentation so your non-technical team can update copy, launch promotions, and view data effortlessly.' },
       { num: '03', title: 'Performance & Speed Obsessed', body: 'A slow site directly degrades your Google SEO ranking and ad conversion rates. We tune Core Web Vitals, write lean modular React code, and optimize server response times to guarantee sub-second page loads.' },
       { num: '04', title: 'Accountability & Direct Access', body: 'You communicate directly with the senior engineers and growth strategists building your project. No layers of non-technical account executives slowing down progress.' },
     ],
@@ -446,6 +543,8 @@ class CentralDataStore {
           services: parsed.services?.length ? parsed.services : initialServices,
           portfolio: parsed.portfolio?.length ? parsed.portfolio : initialPortfolio,
           employees: parsed.employees?.length ? parsed.employees : initialEmployees,
+          teamMembers: parsed.teamMembers?.length ? parsed.teamMembers : initialTeamMembers,
+          plans: parsed.plans?.length ? parsed.plans : initialPlans,
           leads: parsed.leads?.length ? parsed.leads : initialLeads,
           tasks: parsed.tasks?.length ? parsed.tasks : initialTasks,
           messages: parsed.messages?.length ? parsed.messages : initialMessages,
@@ -460,6 +559,8 @@ class CentralDataStore {
       services: initialServices,
       portfolio: initialPortfolio,
       employees: initialEmployees,
+      teamMembers: initialTeamMembers,
+      plans: initialPlans,
       leads: initialLeads,
       tasks: initialTasks,
       messages: initialMessages,
@@ -703,6 +804,127 @@ class CentralDataStore {
       }
       return emp;
     });
+    this.save();
+  }
+
+  // TEAM & LEADERSHIP MEMBERS (Public Website "Direct Access to Engineers")
+  getTeamMembers() {
+    if (!this.data.teamMembers) {
+      this.data.teamMembers = [...initialTeamMembers];
+    }
+    return [...this.data.teamMembers].sort((a, b) => (a.order || 0) - (b.order || 0));
+  }
+
+  getTeamMemberById(id) {
+    return this.getTeamMembers().find((tm) => tm.id === id) || null;
+  }
+
+  addTeamMember(member) {
+    if (!this.data.teamMembers) this.data.teamMembers = [...initialTeamMembers];
+    const newMember = {
+      id: 'tm-' + Date.now(),
+      name: member.name || 'Team Member',
+      role: member.role || 'Senior Engineer',
+      location: member.location || 'Ludhiana, Punjab',
+      bio: member.bio || '',
+      image: member.image || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+      expertise: Array.isArray(member.expertise)
+        ? member.expertise
+        : (member.expertise ? member.expertise.split(',').map((s) => s.trim()).filter(Boolean) : []),
+      order: (this.data.teamMembers.length || 0) + 1,
+    };
+    this.data.teamMembers.push(newMember);
+    this.save();
+    return newMember;
+  }
+
+  updateTeamMember(id, updates) {
+    if (!this.data.teamMembers) this.data.teamMembers = [...initialTeamMembers];
+    this.data.teamMembers = this.data.teamMembers.map((tm) => {
+      if (tm.id === id) {
+        let expertise = tm.expertise;
+        if (updates.expertise !== undefined) {
+          expertise = Array.isArray(updates.expertise)
+            ? updates.expertise
+            : updates.expertise.split(',').map((s) => s.trim()).filter(Boolean);
+        }
+        return { ...tm, ...updates, expertise };
+      }
+      return tm;
+    });
+    this.save();
+  }
+
+  deleteTeamMember(id) {
+    if (!this.data.teamMembers) return;
+    this.data.teamMembers = this.data.teamMembers.filter((tm) => tm.id !== id);
+    this.save();
+  }
+
+  resetTeamMembers() {
+    this.data.teamMembers = [...initialTeamMembers];
+    this.save();
+  }
+
+  // MAINTENANCE PLANS & AMC
+  getPlans() {
+    if (!this.data.plans) {
+      this.data.plans = [...initialPlans];
+    }
+    return [...this.data.plans].sort((a, b) => (a.order || 0) - (b.order || 0));
+  }
+
+  getPlanById(id) {
+    return this.getPlans().find((p) => p.id === id) || null;
+  }
+
+  addPlan(plan) {
+    if (!this.data.plans) this.data.plans = [...initialPlans];
+    const newPlan = {
+      id: 'plan-' + Date.now(),
+      name: plan.name || 'New AMC Plan',
+      tagline: plan.tagline || '',
+      price: plan.price || '₹19,999',
+      period: plan.period || '/ month',
+      sla: plan.sla || '24h SLA',
+      badge: plan.badge || '',
+      featured: !!plan.featured,
+      order: (this.data.plans.length || 0) + 1,
+      features: Array.isArray(plan.features)
+        ? plan.features
+        : (plan.features ? plan.features.split('\n').map((s) => s.trim()).filter(Boolean) : []),
+      cta: plan.cta || 'Choose Plan',
+    };
+    this.data.plans.push(newPlan);
+    this.save();
+    return newPlan;
+  }
+
+  updatePlan(id, updates) {
+    if (!this.data.plans) this.data.plans = [...initialPlans];
+    this.data.plans = this.data.plans.map((p) => {
+      if (p.id === id) {
+        let features = p.features;
+        if (updates.features !== undefined) {
+          features = Array.isArray(updates.features)
+            ? updates.features
+            : updates.features.split('\n').map((s) => s.trim()).filter(Boolean);
+        }
+        return { ...p, ...updates, features };
+      }
+      return p;
+    });
+    this.save();
+  }
+
+  deletePlan(id) {
+    if (!this.data.plans) return;
+    this.data.plans = this.data.plans.filter((p) => p.id !== id);
+    this.save();
+  }
+
+  resetPlans() {
+    this.data.plans = [...initialPlans];
     this.save();
   }
 

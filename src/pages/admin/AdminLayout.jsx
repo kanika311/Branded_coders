@@ -76,9 +76,6 @@ export default function AdminLayout() {
             <NavLink to="/admin" end onClick={closeSidebar} className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}>
               Overview
             </NavLink>
-            <NavLink to="/admin/tasks" onClick={closeSidebar} className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}>
-              Assign Tasks
-            </NavLink>
             <NavLink to="/admin/leads" onClick={closeSidebar} className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}>
               Lead Pipeline
             </NavLink>
@@ -87,6 +84,9 @@ export default function AdminLayout() {
             </NavLink>
             <NavLink to="/admin/portfolio" onClick={closeSidebar} className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}>
               Portfolio CMS
+            </NavLink>
+            <NavLink to="/admin/plans" onClick={closeSidebar} className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}>
+              Plans &amp; AMC CMS
             </NavLink>
             <NavLink to="/admin/messages" onClick={closeSidebar} className={({ isActive }) => `emp-nav-item ${isActive ? 'active' : ''}`}>
               Inquiries

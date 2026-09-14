@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import InteractiveAbout3D from '../components/3d/InteractiveAbout3D.jsx';
 import TiltCard from '../components/3d/TiltCard.jsx';
 import { dataStore } from '../lib/dataStore';
 
@@ -91,33 +90,63 @@ export default function About() {
             </div>
           </div>
 
-          {/* RIGHT: INTERACTIVE 3D STUDIO ATOM */}
-          <TiltCard maxTilt={6} className="hero-canvas" style={{ display: 'flex', flexDirection: 'column' }}>
-            <InteractiveAbout3D />
-            <div
-              style={{
-                position: 'absolute',
-                top: 14,
-                left: 14,
-                right: 14,
-                background: 'rgba(255, 255, 255, 0.9)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid #E2E8F0',
-                borderRadius: 10,
-                padding: '10px 14px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                zIndex: 10,
-              }}
-            >
-              <div>
-                <div style={{ fontWeight: 800, fontSize: '0.88rem', color: '#0F172A' }}>BrandedCoders Studio Node</div>
-                <div style={{ fontSize: '0.75rem', color: '#64748B' }}>Ludhiana HQ · Global Digital Footprint</div>
+          {/* RIGHT: STUDIO ARCHITECTURE & REFERENCE SHOWCASE (TECHPYRO POLISH) */}
+          <div
+            style={{
+              background: '#FFFFFF',
+              borderRadius: '20px',
+              border: '1px solid #E2E8F0',
+              overflow: 'hidden',
+              boxShadow: '0 16px 36px -8px rgba(15, 23, 42, 0.08)',
+              position: 'relative',
+            }}
+          >
+            <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80"
+                alt="BrandedCoders Studio Team & Engineering Hub"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(15, 23, 42, 0.75) 0%, transparent 60%)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 16,
+                  left: 20,
+                  right: 20,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  color: '#FFFFFF',
+                }}
+              >
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: '1.05rem' }}>Ludhiana Engineering Hub</div>
+                  <div style={{ fontSize: '0.78rem', color: '#CBD5E1' }}>In-House Software Engineers &amp; Growth Strategists</div>
+                </div>
+                <span style={{ fontSize: '0.74rem', background: 'rgba(34, 197, 94, 0.9)', color: '#FFFFFF', padding: '3px 10px', borderRadius: 999, fontWeight: 700 }}>
+                  ● Active Operations
+                </span>
               </div>
-              <span className="badge badge-scheduled" style={{ fontSize: '0.72rem' }}>Online & Active</span>
             </div>
-          </TiltCard>
+
+            <div style={{ padding: '24px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, background: '#F8FAFC' }}>
+              <div style={{ background: '#FFFFFF', padding: '14px', borderRadius: 10, border: '1px solid #E2E8F0' }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#2563EB' }}>100%</div>
+                <div style={{ fontSize: '0.78rem', color: '#64748B' }}>Zero Subcontracting</div>
+              </div>
+              <div style={{ background: '#FFFFFF', padding: '14px', borderRadius: 10, border: '1px solid #E2E8F0' }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#059669' }}>4.9 ★</div>
+                <div style={{ fontSize: '0.78rem', color: '#64748B' }}>Verified Client Rating</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

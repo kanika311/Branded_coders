@@ -4,7 +4,9 @@ import api from '../../lib/api.js';
 const empty = {
   title: '',
   client: '',
-  category: 'Digital Marketing',
+  category: 'Web App & CMS',
+  image: '',
+  link: '',
   summary: '',
   metrics: '',
   tags: '',
@@ -33,7 +35,9 @@ export default function ManagePortfolio() {
     setForm({
       title: item.title,
       client: item.client || '',
-      category: item.category || 'Digital Marketing',
+      category: item.category || 'Web App & CMS',
+      image: item.image || '',
+      link: item.link || '',
       summary: item.summary,
       metrics: item.metrics || '',
       tags: (item.tags || []).join(', '),
@@ -114,6 +118,25 @@ export default function ManagePortfolio() {
           </div>
 
           <div className="field">
+            <label>Project Cover Image URL (or Screenshot URL)</label>
+            <input
+              placeholder="https://images.unsplash.com/... or https://yogsathi.com/preview.png"
+              value={form.image}
+              onChange={(e) => update('image', e.target.value)}
+            />
+            {form.image && (
+              <div style={{ marginTop: 8, height: 100, borderRadius: 8, overflow: 'hidden', border: '1px solid #E2E8F0' }}>
+                <img src={form.image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+            )}
+          </div>
+
+          <div className="field">
+            <label>Live Project URL / Website Link</label>
+            <input placeholder="https://yogsathi.com or https://physiopilates.in" value={form.link} onChange={(e) => update('link', e.target.value)} />
+          </div>
+
+          <div className="field">
             <label>Results / Metrics Highlight</label>
             <input placeholder="e.g. +320% Qualified Leads · 4.4x ROAS" value={form.metrics} onChange={(e) => update('metrics', e.target.value)} />
           </div>
@@ -154,8 +177,17 @@ export default function ManagePortfolio() {
                 {items.map((p) => (
                   <tr key={p._id}>
                     <td>
-                      <strong>{p.title}</strong>
-                      <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)' }}>{p.client}</div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                        {p.image ? (
+                          <img src={p.image} alt={p.title} style={{ width: 44, height: 44, borderRadius: 6, objectFit: 'cover', border: '1px solid #E2E8F0' }} />
+                        ) : (
+                          <div style={{ width: 44, height: 44, borderRadius: 6, background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', color: '#94A3B8' }}>No Img</div>
+                        )}
+                        <div>
+                          <strong>{p.title}</strong>
+                          <div style={{ fontSize: '0.78rem', color: 'var(--ink-dim)' }}>{p.client}</div>
+                        </div>
+                      </div>
                     </td>
                     <td>
                       <span className="tag-pill">{p.category}</span>
